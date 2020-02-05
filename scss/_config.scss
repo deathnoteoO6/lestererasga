@@ -1,8 +1,18 @@
 $primary-color: #444;
-$secondary-color: #0059b3;
+$secondary-color: #00fdfd;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.9;
+
+@font-face {
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+  font-family: raleway;
+}
+
+@font-face {
+  src: url(../fonts/HelveticaNeueBold.woff);
+  font-family: helve;
+}
 
 @mixin easeOut {
   transition: all 0.5s ease-out;
