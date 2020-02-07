@@ -36,13 +36,13 @@
     }
 
     .menu-nav {
-        height: 75vh;
+        height: 70vh;
         transform: translate3d(-100%,0,0);
         font-size: 24px;
     }
 
     .menu-branding {
-        height: 25vh;
+        height: 30vh;
         transform: translate3d(100%,0,0);
 
         .portrait {
@@ -57,8 +57,7 @@
         'bioimage'
         'bio'
         'job1'
-        'job2'
-        'job3';
+        'job2';
 
         grid-template-columns: 1fr;
     }
@@ -68,6 +67,7 @@
     }
 
 }
+
 
 // Smartphones
 @include mediaSm {
@@ -80,13 +80,19 @@
         }
     }
 
+    main h1{
+        &.lg-heading {
+            font-size: 4rem;
+        }
+    }
+
     .projects {
         grid-template-columns: 1fr;
     }
 
     .boxes {
         div {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             padding: 1rem 1.5rem;
             margin-bottom: 1.5rem;
         }
@@ -98,4 +104,12 @@
         }
     }
 
+    main#home,
+    main#contact,
+    main#work,
+    main#about
+     {
+        padding: 4.5rem 0.5rem;
+    }
+    
 }
