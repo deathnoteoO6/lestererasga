@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Responsive Website Portfolio",
   "main": "index.js",
+  "homepage": "https://deathnoteoO6.github.io/MyPortfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Lester Erasga",
   "license": "MIT",
