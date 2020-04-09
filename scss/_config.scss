@@ -1,7 +1,7 @@
 $primary-color: #fff;
 $secondary-color: #0065fd;
 $show-home-image: true;
-$home-image: url(../img/bg.jpg);
+$home-image: url(../img/bg12.jpg);
 $background-opacity: 0.1;
 
 @font-face {
@@ -43,11 +43,10 @@ $background-opacity: 0.1;
 // Set Text Color
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
-    @return #000;    
+    @return #000;
   } @else {
     @return #fff;
   }
-
 }
 
 // Media Query Mixins
@@ -56,7 +55,6 @@ $background-opacity: 0.1;
     @content;
   }
 }
-
 
 @mixin mediaMd {
   @media screen and (max-width: 768px) {
@@ -75,4 +73,3 @@ $background-opacity: 0.1;
     @content;
   }
 }
-
