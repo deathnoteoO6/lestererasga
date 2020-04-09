@@ -1,0 +1,511 @@
+@font-face {
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+  font-family: montserrat;
+}
+
+@font-face {
+  src: url(../fonts/HelveticaNeueBold.woff);
+  font-family: helve;
+}
+
+@font-face {
+  src: url(../fonts/Helvetica-400.ttf);
+  font-family: helve1;
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+.menu-btn .btn-line {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  background: #000;
+  transition: all 0.5s ease-out;
+}
+.menu-btn.close {
+  transform: rotate(180deg);
+}
+.menu-btn.close .btn-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.close .btn-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  visibility: hidden;
+}
+.menu.show {
+  visibility: visible;
+}
+.menu-branding,
+.menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+.menu-nav {
+  margin: 0;
+  padding: 0;
+  background: #e6e6e6;
+  list-style: none;
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.5s ease-out;
+}
+.menu-nav.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu-branding {
+  background: #fff;
+  transform: translate3d(0, 100%, 0);
+  transition: all 0.5s ease-out;
+}
+.menu-branding.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu-branding .portrait {
+  width: 250px;
+  height: 250px;
+  background: url("../img/lesterport.jpg");
+  border-radius: 50%;
+  border: solid 5px #001f54;
+}
+.menu .nav-item {
+  transform: translate3d(600px, 0, 0);
+  transition: all 0.5s ease-out;
+}
+.menu .nav-item.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu .nav-item.current > a {
+  color: #001f54;
+}
+.menu .nav-link {
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  padding: 1rem 0;
+  font-weight: 300;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+.menu .nav-link:hover {
+  color: #001f54;
+}
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  color: #000;
+  height: 100%;
+  margin: 0;
+  font-family: montserrat;
+}
+body#bg-img {
+  background: url(../img/bg12.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body#bg-img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 500;
+}
+h1.lg-heading,
+h2.lg-heading,
+h3.lg-heading {
+  font-size: 4.5rem;
+  font-family: helve;
+  color: #001f54;
+}
+h1.sm-heading,
+h2.sm-heading,
+h3.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  background: white, 0.5;
+}
+h1.name-title,
+h2.name-title,
+h3.name-title {
+  text-align: center;
+  color: #001f54;
+  font-weight: 700;
+}
+
+.home-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: #001f54;
+}
+
+main {
+  padding: 4rem;
+  min-height: calc(100vh - 60px);
+}
+main .icons {
+  margin-top: 1rem;
+}
+main .icons a {
+  padding: 0.4rem;
+}
+main .icons a:hover {
+  color: #0e76a8;
+  transition: all 0.5s ease-out;
+}
+main#home {
+  overflow: hidden;
+}
+main#home .lg-heading {
+  font-size: 6rem;
+  font-family: helve;
+}
+main#home a {
+  color: #000;
+}
+main#home a:hover {
+  color: #001f54;
+  transition: all 0.5s ease-out;
+}
+main#home h1 {
+  margin-top: 20vh;
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio"
+    "job1 job2";
+  grid-template-columns: repeat(2, 1fr);
+}
+.about-info .bio-image {
+  grid-area: bioimage;
+  margin: auto;
+  border-radius: 50%;
+  border: #001f54 5px solid;
+}
+.about-info .bio {
+  grid-area: bio;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  padding: 1rem;
+}
+.about-info .bio .design {
+  color: #001f54;
+  width: 20%;
+}
+.about-info .job1 {
+  grid-area: job1;
+}
+.about-info .job2 {
+  grid-area: job2;
+}
+.about-info .job {
+  padding: 1rem;
+  line-height: 1.6;
+  border: #001f54 3px solid;
+  border-radius: 20px;
+  color: #000;
+}
+.about-info .job h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #001f54;
+}
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.projects img {
+  width: 100%;
+  border: #000 3px solid;
+}
+.projects img:hover {
+  opacity: 0.5;
+  border-color: #001f54;
+  transition: all 0.5s ease-out;
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+}
+.boxes .box {
+  position: relative;
+  width: calc(400px - 30px);
+  height: calc(300px - 30px);
+  background: #fff;
+  float: left;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.boxes .box:hover .icon {
+  top: 20px;
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.boxes .box:hover .icon .fas {
+  font-size: 40px;
+}
+.boxes .box:hover .content {
+  top: 100px;
+  opacity: 1;
+}
+.boxes .box .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #001f54;
+  transition: 0.5s;
+  z-index: 1;
+}
+.boxes .box .icon .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  transition: 0.5s;
+  color: #fff;
+}
+.boxes .box .content {
+  position: relative;
+  top: 100%;
+  height: calc(100% - 100px);
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  opacity: 0;
+}
+.boxes .box .content h3 {
+  margin: 0;
+  padding: 1rem;
+  color: #001f54;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.boxes .box .content p {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-size: 1.3rem;
+}
+
+.btn,
+.btn-dark,
+.btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+}
+.btn:hover,
+.btn-dark:hover,
+.btn-light:hover {
+  background: #001f54;
+  color: #fff;
+}
+
+.btn-dark {
+  background: gray;
+  color: #fff;
+}
+
+.btn-light {
+  background: #000;
+  color: #fff;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: black;
+  color: #fff;
+  height: 60px;
+}
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .boxes div {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .boxes div {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+  main .lg-heading {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  ul.menu-nav.show,
+  div.menu-branding.show {
+    transform: translate3d(0, 0, 0);
+  }
+  .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu-branding {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0);
+  }
+  .menu-branding .portrait {
+    background: url(../img/lesterport_small.JPG);
+    height: 150px;
+    width: 150px;
+  }
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2";
+    grid-template-columns: 1fr;
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .boxes div {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body#bg-img {
+    background: url(../img/bgmobile1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  main#home h1 {
+    margin-top: 10vh;
+  }
+  main#home h1.lg-heading {
+    font-size: 4.5rem;
+    padding-bottom: 0.6rem;
+  }
+  main h1.lg-heading {
+    font-size: 4rem;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .boxes div {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .about-info .bio {
+    font-size: 1rem;
+  }
+  main#home,
+  main#contact,
+  main#work,
+  main#about {
+    padding: 4.5rem 0.5rem;
+  }
+}
